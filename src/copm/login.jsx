@@ -46,7 +46,7 @@ const Login = () => {
       <div className={styles.imageSide}></div>
       <div className={styles.formSide}>
         <div className={styles.form}>
-          <h2>Login Updated</h2>
+          <h2>Login</h2>
           {errorMessage && <p className={styles.error}>{errorMessage}</p>}
           <input
             type="text"
