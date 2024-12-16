@@ -105,7 +105,7 @@ const ViewDocter = () => {
           <div className={styles.photoWrapper}>
             {doctorData.photo ? (
               <img
-                src={"http://localhost:8090/" + doctorData.photo}
+                src={"https://api.rosheta.info/" + doctorData.photo}
                 alt="Doctor"
                 className={styles.doctorPhoto}
               />
