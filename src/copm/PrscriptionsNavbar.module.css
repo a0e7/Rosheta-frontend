@@ -1,0 +1,26 @@
+/* PharmacistNavbar.module.css */
+.navbar {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between title and button */
+    align-items: center; /* Center items vertically */
+    padding: 15px 20px; /* Padding around the navbar */
+    background: linear-gradient(135deg,#87CEEB, #98ff98 ); /* Gradient background */
+
+    color: white; /* Text color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.dispenseButton {
+    background-color: #87CEEB; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.dispenseButton:hover {
+    background-color: #333; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}

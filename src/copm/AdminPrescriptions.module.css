@@ -1,0 +1,90 @@
+/* src/copm/AdminPrescriptions.module.css */
+
+/* General Styles */
+.pageContainer {
+    display: flex; /* Use flexbox for layout */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f9f9f9; /* Light gray background for the entire page */
+  }
+  
+  /* Content Area */
+  .content {
+    flex: 1; /* Take up the remaining space */
+    padding: 20px; /* Add padding around the content */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  }
+  
+  /* Title Styles */
+  .title {
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+    color: #333; /* Darker color for better readability */
+    font-size: 2em; /* Larger font size for the title */
+    display: flex; /* Use flexbox for icon and text alignment */
+    align-items: center; /* Center the items vertically */
+    justify-content: center; /* Center the items horizontally */
+  }
+  
+  /* Icon Styles */
+  .icon {
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle; /* Align icon vertically with text */
+    font-size: 1.5em; /* Increase icon size for better visibility */
+    color: #87ceeb; /* Primary color for icons */
+  }
+  
+  /* Table Styles */
+  .prescriptionTable {
+    width: 100%; /* Full width of the table */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    margin-top: 20px; /* Space above the table */
+  }
+  
+  /* Table Header Styles */
+  .prescriptionTable th {
+    background-color: #f2f2f2; /* Light gray background for header */
+    color: #333; /* Darker text for better readability */
+    padding: 12px; /* Padding for header cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 2px solid #98ff98; /* Bottom border for header */
+  }
+  
+  /* Table Cell Styles */
+  .prescriptionTable td {
+    border: 1px solid #ddd; /* Light border around cells */
+    padding: 10px; /* Padding for cells */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Hover Effect for Table Rows */
+  .prescriptionTable tr:hover {
+    background-color: #f1f1f1; /* Change background color on hover */
+  }
+  .viewButton {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 8px 12px; /* Padding for the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+  }
+  
+  .viewButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+  }
+  
+  .viewButton:focus {
+    outline: none; /* Remove default focus outline */
+  }
+  
+  .viewButton:active {
+    transform: scale(0.95); /* Slightly shrink the button when clicked */
+  }
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .prescriptionTable {
+      font-size: 14px; /* Smaller font size for smaller screens */
+    }
+  }

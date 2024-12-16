@@ -1,0 +1,133 @@
+/* src/admin/CreatPharmacy.module.css */
+.pageContainer {
+    display: flex; /* Use Flexbox for layout */
+}
+
+.navbar {
+    width: 250px; /* Fixed width for the navbar */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #4a90e2; /* Navbar background color */
+    color: white; /* Text color */
+    padding: 20px; /* Padding for navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.pharmacyContainer {
+    flex: 1; /* Take up the remaining space */
+    padding: 40px; /* Padding around the content */
+    background-color: #f9f9f9; /* Light gray background for the content area */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    transition: box-shadow 0.3s; /* Smooth transition for shadow */
+}
+
+.pharmacyContainer:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+h1 {
+    color: #333; /* Header color */
+    text-align: center; /* Center the header */
+    margin-bottom: 30px; /* Space below the header */
+    font-size: 32px; /* Increase font size for emphasis */
+    font-weight: bold; /* Bold font for the header */
+}
+
+.inputField {
+    width: 100%; /* Full width */
+    padding: 12px; /* Increased padding for comfort */
+    margin-bottom: 20px; /* Space below the input fields */
+    border: 1px solid #ccc; /* Border around the input fields */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size for better readability */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.inputField:focus {
+    border-color: #98ff98; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Light shadow on focus */
+}
+
+.createButton {
+    padding: 12px 20px; /* Padding inside the button */
+    background-color: #4a90e2; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for better readability */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+    width: 100%; /* Full width for the button */
+    margin-top: 20px; /* Space above the button */
+}
+
+.createButton:hover {
+    background-color: #98ff98; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.createButton:active {
+    transform: translateY(0); /* Reset lift effect when clicked */
+}
+.icon {
+    margin-right: 10px; /* Space between icon and input */
+    color: #6a11cb; /* Color for the icons */
+    font-size: 24px; /* Icon size */
+}
+
+/* Change border color on focus */
+.inputWrapper:focus-within {
+    border-color: #6a11cb; /* Change border color when input is focused */
+}
+
+/* Add this to EditPharmacy.module.css */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of other content */
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .okButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+/* Optional: Add some media queries for responsiveness */
+@media (max-width: 768px) {
+    .pharmacyContainer {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 28px; /* Smaller font size for headings */
+    }
+
+    .inputField {
+        font-size: 14px; /* Smaller font size for inputs */
+    }
+
+    .createButton {
+        font-size: 14px; /* Smaller font size for buttons */
+    }
+}

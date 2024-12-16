@@ -1,0 +1,192 @@
+.pageContainer {
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+  background-color: #f4f5f7; /* Light gray background */
+}
+.contentContainer {
+  flex: 1; /* Allow content to take remaining space */
+  padding: 20px; /* Add padding around the content */
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.doctorContainer {
+  flex: 1; /* Take up remaining space */
+  padding: 20px; /* Add padding */
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  border-radius: 8px; 
+  display: flex;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  flex-direction: column;
+  background-color: #ffffff; /* White background for the container */
+}
+
+.title {
+  text-align: center; /* Center the title */
+  margin-bottom: 2rem; /* Space below the title */
+  color: #333; /* Darker text color for better readability */
+  font-size: 2rem; /* Larger font size for the title */
+}
+
+.searchBarWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* Space below the search bar */
+}
+
+.searchIcon {
+  margin-right: 8px; /* Space between icon and input */
+  font-size: 1.5em; /* Increase icon size for better visibility */
+  color: #4a90e2; /* Primary color for the icon, matching Pharmacist */
+}
+
+.searchBar {
+  flex: 1; /* Allow input to take available space */
+  padding: 0.75rem 1rem; /* Padding inside the input */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 0.5rem; /* Rounded corners */
+  font-size: 1.125rem; /* Font size for input */
+  background-color: #ffffff; /* White background for input */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+/* Focus State */
+.searchBar:focus {
+  border-color: #4a90e2; /* Change border color on focus, matching Pharmacist */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Glow effect on focus */
+}
+
+.createButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Make the button take the full width */
+  background: linear-gradient(135deg, #98ff98, #87ceeb); /* Gradient background */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 0.75rem 1.5rem; /* Increased padding for better appearance */
+  font-size: 1.125rem; /* Font size for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-bottom: 2rem; /* Space below the button */
+  transition: background 0.3s, transform 0.3s; /* Smooth transition for background and transform */
+  text-decoration: none; /* Ensure no underline */
+}
+
+/* If you want to ensure links don't have an underline globally */
+a {
+  text-decoration: none; /* Remove underline from all links */
+}
+
+/* Optional: Ensure no underline for child elements as well */
+.createButton > * {
+  text-decoration: none; /* No underline for child elements */
+}
+
+/* Hover Effect */
+.createButton:hover {
+  background: #87ceeb; /* Reverse gradient on hover */
+  /* transform: translateY(-2px); Slight lift effect on hover */
+}
+
+/* Table Styling */
+.doctorTable {
+  width: 100%; /* Full width of the container */
+  border-collapse: collapse; /* Collapse borders */
+}
+
+.doctorTable th,
+.doctorTable td {
+  padding: 1rem; /* Padding for table cells */
+  text-align: left; /* Align text to the left */
+}
+
+.doctorTable th {
+  background-color: #f4f4f4; /* Light background for header */
+  font-weight: bold; /* Bold text for header */
+  color: #333; /* Darker text color */
+}
+
+.doctorRow:hover {
+  background-color: #f1f1f1; /* Change background on row hover */
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem; /* Space between buttons */
+}
+
+.viewButton,
+.editButton,
+.deactivateButton {
+  background: none; /* No background */
+  border: none; /* No border */
+  color: #333; /* Button color, matching Pharmacist */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: color 0.3s; /* Smooth transition for color */
+}
+
+/* Hover Effect for Buttons */
+.viewButton:hover,
+.editButton:hover,
+.deactivateButton:hover {
+  color: #87ceeb; /* Change color on hover */
+}
+
+.noData {
+  text-align: center; /* Center text for no data message */
+  padding: 1rem; /* Padding for no data cell */
+  color: #666; /* Gray text color */
+}
+
+.confirmationPopup {
+  position: absolute; /* Position it relative to the button */
+  background-color: white; /* Popup background */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Padding inside the popup */
+  z-index: 10; /* Ensure it appears above other elements */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  width: 250px; /* Fixed width for the popup */
+  text-align: center; /* Center text */
+}
+
+.confirmationPopup p {
+  margin: 0 0 15px 0; /* Margin for the text */
+  font-size: 1rem; /* Font size */
+  color: #333; /* Dark text color */
+}
+
+.confirmationPopup button {
+  margin: 0 5px; /* Space between buttons */
+  padding: 8px 12px; /* Padding for buttons */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.confirmationPopup button:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+.confirmationPopup button:first-of-type {
+  background-color: #f44336; /* Red background for 'Yes' */
+  color: white; /* White text for 'Yes' */
+}
+
+.confirmationPopup button:first-of-type:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.confirmationPopup button:last-of-type {
+  background-color: #4caf50; /* Green background for 'No' */
+  color: white; /* White text for 'No' */
+}
+
+.confirmationPopup button:last-of-type:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}

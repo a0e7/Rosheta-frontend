@@ -1,0 +1,88 @@
+/* Patient.module.css */
+.container {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+  }
+  
+  .patientList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1; /* Allow patient list to take remaining space */
+    padding: 20px; /* Add some padding */
+  }
+  
+  .patientCard {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .patientName {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .prescriptionList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .prescriptionItem {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between details and actions */
+    align-items: center; /* Center items vertically */
+    margin: 10px 0; /* Space between items */
+    padding: 10px; /* Padding inside each item */
+    background-color: #f7f9fc; /* Light gray background for items */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .prescriptionDetails {
+    flex: 1; /* Allow details to take up available space */
+  }
+  
+  .prescriptionActions {
+    display: flex; /* Align buttons in a row */
+    gap: 10px; /* Space between buttons */
+  }
+  
+  .updateButton, .deleteButton {
+  
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 8px 12px; /* Padding for the buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    display: flex; /* Flexbox for icon alignment */
+    align-items: center; /* Center icons vertically */
+  }
+  .updateButton{
+      background-color: #4a90e2; /* Primary color for buttons */
+   
+  }
+  
+  .updateButton:hover {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+  }
+  
+  .deleteButton {
+    background-color: #333; /* Red color for delete button */
+  }
+  
+  .deleteButton:hover {
+    background-color: #df4166; /* Darker red on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+  }
+  
+  .updateButton, .deleteButton {
+    font-size: 14px; /* Font size for buttons */
+  }
+  
+  .icon {
+    margin-right: 5px; /* Space between icon and text */
+  }

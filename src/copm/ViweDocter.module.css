@@ -1,0 +1,104 @@
+/* src/admin/ViweDocter.module.css */
+
+/* General Styles */
+.pageContainer {
+  display: flex; /* Use flexbox for layout */
+  height: 100vh; /* Full height of the viewport */
+  background-color: #f4f5f7; /* Light gray background */
+}
+
+.doctorContainer {
+  flex: 1; /* Take up remaining space */
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 30px; /* Increased padding for spacious feel */
+  margin: 2rem; /* Margin around the container */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Title Styles */
+h1 {
+  text-align: center; /* Center the title */
+  margin-bottom: 20px; /* Space below the title */
+  color: #333; /* Darker color for title */
+  font-size: 2.5em; /* Larger font size for prominence */
+  font-weight: bold; /* Bold title for emphasis */
+}
+
+/* Details Container */
+.detailsContainer {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+}
+
+/* Input Wrapper Styles */
+.inputWrapper {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 20px; /* Increased space between fields */
+}
+
+/* Icon Styles */
+.icon {
+  margin-right: 15px; /* More space between icon and text */
+  color: #6a11cb; /* Color for the icons */
+  font-size: 1.5em; /* Icon size */
+}
+
+/* Static Text Styles */
+span {
+  font-size: 1.125rem; /* Font size for static text */
+  color: #555; /* Slightly lighter color for static text */
+  flex: 1; /* Allow text to take available space */
+  padding: 0.75rem; /* Padding around the text */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 0.5rem; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background for static text */
+}
+
+/* Photo Display Styles */
+.photoWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Space below the photo display */
+  height: 150px; /* Fixed height for the photo wrapper */
+  border: 1px dashed #d1d5db; /* Dashed border for empty photo space */
+  justify-content: center; /* Center the photo or the message */
+  background-color: #f9f9f9; /* Background color for the photo area */
+}
+
+.doctorPhoto {
+  max-height: 100%; /* Allow the image to be responsive */
+  max-width: 100%; /* Allow the image to be responsive */
+  border-radius: 5px; /* Rounded corners for the photo */
+}
+
+/* Navbar Styles (if you need to customize) */
+.navbar {
+  width: 250px; /* Fixed width for navbar */
+  background-color: #ffffff; /* Navbar background color */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for navbar */
+  padding: 20px; /* Padding for the navbar */
+  border-radius: 10px; /* Rounded corners for navbar */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .doctorContainer {
+    padding: 15px; /* Less padding on smaller screens */
+    margin: 1rem; /* Reduced margin on smaller screens */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Smaller font size for the title */
+  }
+
+  span {
+    font-size: 1rem; /* Smaller font size for static text */
+  }
+
+  .icon {
+    font-size: 1.2rem; /* Smaller icon size */
+  }
+}

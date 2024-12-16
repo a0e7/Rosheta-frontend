@@ -1,0 +1,60 @@
+/* Navbar.module.css */
+.navbar {
+  display: flex; /* Flexbox for layout */
+  justify-content: baseline; /* Space between logo and links */
+  align-items: center; /* Center items vertically */
+  background: linear-gradient(
+    135deg,
+    #87ceeb,
+    #98ff98
+  ); /* Gradient background */
+  padding: 15px 30px; /* Padding around navbar */
+  color: white; /* Text color */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 250px; /* Fixed width for the navbar */
+  min-width: 250px; /* Ensure it doesn't shrink below this width */
+  flex-direction: column; /* Stack items vertically */
+  min-height: 100vh; /* Minimum height of the navbar */
+  height: auto;
+}
+
+.navbar h2 {
+  text-align: center; /* Center the title */
+  color: #333; /* Darker text color */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.navbar ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
+
+.navbar li {
+  margin: 15px 0; /* Space between each list item */
+}
+
+.navbar a {
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Darker text color */
+  padding: 10px; /* Padding around the link */
+  display: block; /* Make the link fill the list item */
+  border-radius: 5px; /* Rounded corners for links */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+  background-color: #333; /* Light sky blue on hover */
+  color: white; /* Change text color on hover */
+}
+.icon {
+  font-size: 24px; /* Set a default size for the icons */
+  color: whitesmoke; /* Default color for the icons */
+  transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transform */
+  margin: 0 10px; /* Horizontal spacing between icons */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.icon:hover {
+  color: #87ceeb; /* Change color on hover */
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}

@@ -1,0 +1,52 @@
+/* src/admin/MedicenVA.module.css */
+
+.pageContainer {
+    display: flex;
+ 
+    background-color: #f4f5f7;
+}
+
+.medicienContainer {
+    flex: 1;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin: 2rem;
+    overflow-y: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 2rem;
+}
+
+.medicationTable {
+    width: 100%;
+    border-collapse: collapse; /* Merge borders */
+}
+
+.medicationTable th,
+.medicationTable td {
+    padding: 1rem; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #d1d5db; /* Light gray border for rows */
+}
+
+.medicationTable th {
+    background-color: #e9ecef; /* Light gray background for headers */
+    color: #333; /* Dark text for headers */
+    font-weight: bold; /* Bold font for headers */
+}
+
+.medicationTable tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.icon {
+    margin-right: 0.5rem; /* Space between icon and text */
+    color: #6a11cb; /* Icon color */
+    font-size: 1.2rem; /* Icon size */
+}

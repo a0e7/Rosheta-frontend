@@ -1,0 +1,212 @@
+/* Main Container */
+
+.container {
+    display: flex; /* Horizontal layout for Navbar and content */
+    height: 50vh; /* Full viewport height */
+    width: auto;
+    background-color: #f7f9fc; /* Light gray background */
+   /* Prevent content from overflowing */
+  }
+  
+  /* Content Section (to the right of the Navbar) */
+  .content {
+    flex: 1; /* Take up the remaining space */
+    padding: 20px; /* Space around the content */
+    margin-left: 20px; /* Add space between content and navbar */
+    overflow-y: auto; /* Allow vertical scrolling for content */
+    box-sizing: border-box; /* Include padding in width/height */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+  }
+  
+  /* Dashboard Container */
+  .dashboardContainer {
+    display: flex; /* Arrange dashboards side by side */
+    margin-top: 10px;
+    justify-content: space-between; /* Space between dashboard cards */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    flex: 1; /* Take up remaining space */
+    overflow: auto;
+    gap: 20px; /* Space between dashboard cards */
+    flex-direction: column; /* Stack dashboards vertically */
+  
+    margin-bottom: 20px; /* Space below the dashboards */
+  }
+  .dashboardGrid {
+    display: grid; /* Use grid layout for dashboards */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between the dashboards */
+    flex: 1; /* Allow the grid to take up the available space */
+  }
+  
+  /* Individual Dashboard Cards */
+  .dashboard {
+    background: linear-gradient(135deg,#87CEEB, #98ff98 );
+    color: white; /* White text for contrast */
+    border-radius: 12px; /* Rounded corners */
+  
+    padding: 20px; /* Padding inside the card */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center; /* Center-align content */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+    cursor: pointer;
+  }
+  
+  /* Hover Effect for Dashboard Cards */
+  .dashboard:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+  }
+  
+  /* Icons inside Dashboard */
+  .Dicon {
+    font-size: 50px; /* Larger size for visibility */
+    margin-bottom: 15px; /* Space below the icon */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    padding: 15px; /* Padding for the icon */
+    border-radius: 50%; /* Circular background */
+    display: inline-flex; /* Center icon content */
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
+  }
+  
+  /* Dashboard Headings */
+  .dashboard h1 {
+    font-size: 22px; /* Font size for headings */
+    margin: 10px 0; /* Space between heading and icon */
+    line-height: 1.4; /* Better spacing for multiple lines */
+  }
+  
+  /* Prescription List Section */
+  /* Prescription List Section */
+  
+  /* Prescription List Container */
+  .prescriptionList {
+    background-color: #ffffff; /* White background for good contrast */
+    padding: 25px; /* Padding inside the list section */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 900px; /* Center the list and limit width */
+    margin: 0 auto; /* Horizontally center the list */
+    margin-top: 20px; /* Space above the prescription list */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth effects for hover */
+  }
+  
+  /* Prescription List Title */
+  .prescriptionList h2 {
+    font-size: 26px; /* Larger size for section title */
+    font-weight: bold; /* Make the title stand out */
+    margin-bottom: 20px; /* Space below the title */
+    color: #333333; /* Darker color for good readability */
+    text-align: center; /* Center-align the title */
+    text-transform: uppercase; /* Make the title uppercase for emphasis */
+    letter-spacing: 1px; /* Slight letter spacing for a modern look */
+  }
+  
+  /* Prescription List Items */
+  .prescriptionList ul {
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+  }
+  
+  .prescriptionList li {
+    background-color: #f7f9fc; /* Light gray background for list items */
+    padding: 20px; /* Add padding inside list items */
+    margin-bottom: 15px; /* Space between list items */
+    border-radius: 8px; /* Rounded corners for list items */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    display: flex; /* Flexbox for better alignment */
+    justify-content: space-between; /* Space between patient name and details */
+    align-items: center; /* Center content vertically */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+  }
+  
+  /* Hover Effect for List Items */
+  .prescriptionList li:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Highlight shadow */
+  }
+  
+  /* Prescription Details */
+  .prescriptionDetails {
+    flex: 1; /* Allow details to take up available space */
+    text-align: left; /* Align text to the left */
+    color: #555555; /* Dark gray text for readability */
+    font-size: 18px; /* Font size for prescription details */
+    line-height: 1.6; /* Better spacing for multiple lines */
+  }
+  
+  .prescriptionDetails span {
+    font-weight: bold; /* Highlight important details */
+    color: #333333; /* Darker color for emphasis */
+  }
+  
+  /* Date Section */
+  .prescriptionDate {
+    font-size: 16px; /* Smaller font size for the date */
+    font-weight: bold; /* Bold date for emphasis */
+    color: #6a11cb; /* Match with primary gradient color */
+    background-color: rgba(106, 17, 203, 0.1); /* Subtle background for visibility */
+    padding: 8px 12px; /* Add padding around the date */
+    border-radius: 5px; /* Rounded corners for the date */
+    text-align: center; /* Center-align the date */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .prescriptionList li {
+      flex-direction: column; /* Stack details and date vertically */
+      align-items: flex-start; /* Align items to the start */
+    }
+  
+    .prescriptionDate {
+      margin-top: 10px; /* Add spacing above the date */
+      text-align: left; /* Align text to the left */
+    }
+  }
+  /* Title Styles */
+  .title {
+    margin-top: 20px;
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+    color: #333; /* Darker color for better readability */
+    font-size: 2em; /* Larger font size for the title */
+    display: flex; /* Use flexbox for icon and text alignment */
+    align-items: center; /* Center the items vertically */
+    justify-content: center; /* Center the items horizontally */
+  }
+  
+  /* Icon Styles */
+  .icon {
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle; /* Align icon vertically with text */
+    font-size: 1.5em; /* Increase icon size for better visibility */
+    color: #87ceeb; /* Primary color for icons */
+  }
+  
+  /* Table Styles */
+  .prescriptionTable {
+    width: 100%; /* Full width of the table */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    margin-top: 20px; /* Space above the table */
+  }
+  
+  /* Table Header Styles */
+  .prescriptionTable th {
+    background-color: #f2f2f2; /* Light gray background for header */
+    color: #333; /* Darker text for better readability */
+    padding: 12px; /* Padding for header cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 2px solid #98ff98; /* Bottom border for header */
+  }
+  
+  /* Table Cell Styles */
+  .prescriptionTable td {
+    border: 1px solid #ddd; /* Light border around cells */
+    padding: 10px; /* Padding for cells */
+    text-align: left; /* Align text to the left */
+  }
+  
+  

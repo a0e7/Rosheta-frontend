@@ -1,0 +1,46 @@
+/* PatientNavbar.module.css */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between title and button */
+    align-items: center; /* Center items vertically */
+    padding: 15px 20px; /* Padding around the navbar */
+    background: linear-gradient(135deg,#87CEEB, #98ff98 ); 
+    color: white; /* Text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.title {
+    font-size: 24px; /* Increase font size for the title */
+    margin: 0; /* Remove default margin */
+}
+
+.addButton {
+    background-color: #87CEEB; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+    font-size: 16px; /* Font size for better readability */
+}
+
+.addButton:hover {
+    background-color: #333; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.searchInput {
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 10px; /* Space between input and button */
+    font-size: 16px; /* Font size for better readability */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.searchInput:focus {
+    border-color: #6ab04c; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}

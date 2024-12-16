@@ -1,0 +1,66 @@
+.pageContainer {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f0f4f8; /* Light background color for the entire page */
+}
+
+.profileContainer {
+    flex: 1; /* Take up the remaining space */
+    padding: 40px; /* Padding around the content */
+    background-color: #ffffff; /* White background for the profile area */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    transition: box-shadow 0.3s; /* Smooth transition for shadow */
+}
+
+.profileContainer:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+h1 {
+    color: #333; /* Darker color for the header */
+    text-align: center; /* Center the header */
+    margin-bottom: 30px; /* Space below the header */
+    font-size: 28px; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font for better visibility */
+}
+
+.infoContainer {
+    font-size: 18px; /* Font size for better readability */
+    color: #555; /* Dark gray text for better contrast */
+}
+
+.infoSection {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space between sections */
+    padding: 15px; /* Padding inside sections */
+    border: 1px solid #ddd; /* Light border around sections */
+    border-radius: 5px; /* Rounded corners for sections */
+    background-color: #f9f9f9; /* Light gray background for sections */
+}
+
+.icon {
+    font-size: 20px; /* Icon size */
+    color: #4a90e2; /* Icon color */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.resetButton {
+    background-color: #4a90e2; /* Primary color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for top/bottom and left/right */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    text-align: center; /* Center text */
+    display: inline-block; /* Inline block for proper spacing */
+    width: 100%; /* Full width for the button */
+}
+
+.resetButton:hover {
+    background-color: #357ab8; /* Darker shade on hover */
+}

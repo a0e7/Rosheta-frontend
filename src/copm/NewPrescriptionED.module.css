@@ -1,0 +1,212 @@
+.pageContainer {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically for smaller screens */
+  height: 100vh; /* Full height of the viewport */
+  font-family: "Arial", sans-serif; /* Set a clean font */
+  background-color: #f7f9fc; /* Light gray background for the entire page */
+  margin: 0; /* Reset margin to avoid extra spacing */
+  padding: 0; /* Reset padding */
+}
+
+@media (min-width: 768px) {
+  .pageContainer {
+    flex-direction: row; /* Switch to row layout on larger screens */
+  }
+}
+
+.formContainer {
+  flex: 1; /* Allow the form to take the remaining space */
+  padding: 40px; /* Increased padding for a spacious feel */
+  background-color: #ffffff; /* White background for a clean look */
+  border-left: 1px solid #e0e0e0; /* Subtle border for separation */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  border-radius: 10px; /* Rounded corners for the form container */
+  transition: box-shadow 0.3s, transform 0.3s; /* Smooth transitions for shadow and hover effect */
+}
+
+.formContainer:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Darker shadow on hover for emphasis */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+h1 {
+  color: #333; /* Darker header color for contrast */
+  text-align: center; /* Center the header */
+  margin-bottom: 30px; /* Space below the header */
+  font-size: 32px; /* Larger font size for emphasis */
+  font-weight: 700; /* Bold for better visibility */
+  line-height: 1.2; /* Improved line height for readability */
+  letter-spacing: 0.5px; /* Slight spacing for elegant text appearance */
+}
+
+.inputField {
+  width: 100%; /* Full width */
+  padding: 15px; /* Increased padding for comfort */
+  margin-bottom: 20px; /* Space below the input fields */
+  border: 1px solid #ccc; /* Light border around the input fields */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size for better readability */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+  background-color: #fafafa; /* Light background for clarity */
+  color: #333; /* Dark text for better readability */
+  appearance: none;
+}
+
+.additionalInputGroup {
+  display: flex; /* Use flexbox to arrange items in a row */
+  align-items: center; /* Align items vertically centered */
+  margin-bottom: 15px; /* Space below each medication input group */
+}
+
+.searchContainer {
+  flex: 1; /* Allow search input to grow */
+  position: relative; /* Position relative for absolute positioning of results */
+  margin-right: 10px; /* Space between search and medication inputs */
+}
+
+.medicationContainer {
+  display: flex; /* Use flexbox for the medication inputs */
+  flex: 3; /* Allow this container to grow more than the search */
+  margin-top: 10xp;
+  gap: 10px; /* Space between inputs */
+}
+
+.searchResults {
+  position: absolute; /* Position absolute for dropdown */
+  top: 100%; /* Position below the input field */
+  left: 0; /* Align with the left side of the input */
+  right: 0; /* Align with the right side of the input */
+  background-color: white; /* White background for dropdown */
+  border: 1px solid #ccc; /* Border around dropdown */
+  border-radius: 5px; /* Rounded corners */
+  max-height: 200px; /* Max height for dropdown */
+  overflow-y: auto; /* Allow scrolling if too many results */
+  z-index: 1000; /* Ensure dropdown appears above other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for dropdown */
+}
+
+.searchItem {
+  padding: 10px; /* Padding for each search item */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.searchItem:hover {
+  background-color: #f0f0f0; /* Change background on hover */
+}
+
+.createButton {
+  padding: 12px 20px; /* Padding inside the button */
+  background-color: #4a90e2; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size for better readability */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+  width: 100%; /* Full width for the button */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.createButton:hover {
+  background-color: #98ff98; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.createButton:active {
+  transform: translateY(0); /* Reset lift effect when clicked */
+}
+
+.addButton {
+  padding: 12px 20px; /* Comfortable padding for the button */
+  font-size: 16px; /* Font size for better readability */
+  color: #ffffff; /* White text for contrast */
+  background-color: #98ff98; /* Green background for a positive action */
+  border: none; /* No border for a clean look */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex; /* Align icon and text */
+  align-items: center; /* Center items vertically */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 20px; /* Space below the button */
+}
+
+.addButton:hover {
+  background-color: #87ceeb; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.addButton:active {
+  background-color: #1e7e34; /* Even darker green when clicked */
+  transform: translateY(0); /* Reset lift effect when clicked */
+}
+
+.addButton .icon {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 20px; /* Icon size */
+}
+.icon {
+  font-size: 20px; /* Adjust icon size */
+  color: #87ceeb; /* Icon color to match the theme */
+  margin-right: 10px; /* Space between icon and input text */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.icon:hover {
+  color: #87ceeb; /* Darker shade on hover for icons */
+}
+
+.inputWithIcon {
+  position: relative; /* Position relative for icon alignment */
+
+  align-items: center; /* Center items vertically */
+}
+
+.inputWithIcon .inputField {
+  padding-left: 40px; /* Add padding to the left for the icon */
+}
+/* Add this to NewPrescription.module.css */
+.alertOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.alert {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.alert h2 {
+  margin: 0 0 10px;
+  color: green; /* Success color */
+}
+
+.alert p {
+  margin: 0 0 20px;
+}
+
+.alert button {
+  padding: 10px 15px;
+  background-color: #007bff; /* Alert button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.alert button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}

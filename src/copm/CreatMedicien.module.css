@@ -1,0 +1,102 @@
+/* src/admin/CreatMedicien.module.css */
+.pageContainer {
+  display: flex; /* Use Flexbox for layout */
+  height: 100vh; /* Full height of the viewport */
+}
+
+.medicienContainer {
+  flex: 1; /* Allow this container to grow and fill the space */
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px; /* Add margin for spacing */
+  display: flex; /* Enable flexbox for the inner container */
+  flex-direction: column; /* Stack children vertically */
+}
+
+h1 {
+  text-align: center; /* Center the title */
+  margin-bottom: 20px; /* Space below the title */
+  color: #333; /* Darker text color for better readability */
+}
+
+.form {
+  display: flex; /* Use flexbox for form layout */
+  flex-direction: column; /* Stack inputs vertically */
+  flex-grow: 1; /* Allow form to take remaining space */
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem; /* Reduced space between input fields */
+}
+
+.icon {
+  margin-right: 10px; /* Space between icon and input field */
+  color: #6a11cb; /* Primary color for icons */
+  font-size: 1.5em; /* Increase icon size for visibility */
+}
+
+.inputField {
+  flex: 1; /* Allow input to take available space */
+  padding: 0.75rem; /* Padding inside the input */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 0.5rem; /* Rounded corners */
+  font-size: 1rem; /* Font size for input */
+  background-color: #ffffff; /* White background for input */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.inputWrapper {
+  display: flex; /* Use flexbox for the file input wrapper */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 1rem; /* Space below the file input */
+}
+
+.createButton {
+  background: linear-gradient(135deg, #98ff98, #87ceeb);
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding inside button */
+  font-size: 1em; /* Font size for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.createButton:hover {
+  background: linear-gradient(135deg, #87ceeb, #98ff98);
+}
+/* Add this to CreatMedicien.module.css */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.okButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}

@@ -1,0 +1,98 @@
+/* Main container styling */
+.pageContainer {
+    display: flex; /* Use Flexbox for layout */
+
+    height: 100vh; /* Full height of the viewport */
+  
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+/* Content container styling */
+.contentContainer {
+    margin: 0 auto;
+    max-width: 100%; /* Fixed width for better readability */
+    background-color: #fff; /* White background for content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 2rem; /* Padding inside the container */
+    flex: 1; /* Allow the container to grow and fill available space */
+    display: flex; /* Use Flexbox to stack elements vertically */
+    flex-direction: column; /* Vertical stacking */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+/* Header styling */
+.header {
+    margin-bottom: 1.5rem;
+    text-align: center; /* Centered header */
+}
+
+.header h1 {
+    font-size: 2rem; /* Larger font for the title */
+    color: #333; /* Darker text color for contrast */
+}
+
+/* Search input styling */
+.searchInput {
+    width: 100%;
+    padding: 10px; /* Increased padding for comfort */
+    margin-bottom: 1.5rem; /* Spacing below the input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Slightly rounded corners */
+    font-size: 1rem; /* Consistent font size */
+    transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+.searchInput:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Table styling */
+.prescriptionTable {
+    width: 100%;
+    border-collapse: collapse; /* Merge borders */
+    margin-top: 1rem; /* Space above the table */
+}
+
+/* Table header styling */
+.prescriptionTable th, .prescriptionTable td {
+    border: 1px solid #ddd; /* Light border for table cells */
+    padding: 12px; /* Increased padding for better spacing */
+    text-align: left; /* Left-align text */
+}
+
+/* Table header background and text alignment */
+.prescriptionTable th {
+    background-color: #007bff; /* Blue background for header */
+    color: white; /* White text for contrast */
+    font-weight: bold; /* Bold text */
+}
+
+/* Table row hover effect */
+.prescriptionTable tr:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+}
+
+/* Prescription link styling */
+.prescriptionLink {
+    display: table-row; /* Make the link behave like a table row */
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* No underline */
+}
+
+.prescriptionLink:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+}
+
+.prescriptionLink:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* No results styling */
+.noResults {
+    text-align: center; /* Centered text */
+    padding: 1rem; /* Padding for spacing */
+    color: #666; /* Gray text for less emphasis */
+    font-style: italic; /* Italic style for a softer look */
+}

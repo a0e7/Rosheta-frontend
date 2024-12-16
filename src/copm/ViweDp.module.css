@@ -1,0 +1,71 @@
+/* src/ViweDp.module.css */
+
+.pageContainer {
+    display: flex;
+ 
+    min-height: 100vh; /* Full viewport height */
+    background-color: #f4f5f7; /* Light gray background */
+}
+
+.formContainer {
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 2rem;
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 2rem;
+    
+    width: 100%; /* Full width within the max */
+}
+
+h1 {
+    font-size: 1.5rem; /* Font size for the header */
+    margin-bottom: 1rem; /* Space below the header */
+    color: #333; /* Dark text color */
+}
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem; /* Space between input groups */
+}
+
+.icon {
+    margin-right: 0.5rem; /* Space between the icon and text */
+    color: #6a11cb; /* Icon color */
+    font-size: 1.5rem; /* Icon size */
+}
+
+.staticText {
+    flex: 1;
+    padding: 0.75rem; /* Padding for the text block */
+    border: 1px solid #d1d5db; /* Light gray border */
+    border-radius: 0.5rem; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for static text */
+    color: #333; /* Text color */
+    font-size: 1rem; /* Font size for static text */
+}
+
+.medicationsTable {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse; /* Merge borders of table cells */
+    margin-top: 1rem; /* Space above the table */
+}
+
+.medicationsTable th,
+.medicationsTable td {
+    padding: 1rem; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #d1d5db; /* Light gray border for rows */
+}
+
+.medicationsTable th {
+    background-color: #e9ecef; /* Light gray background for headers */
+    color: #333; /* Dark text for headers */
+    font-weight: bold; /* Bold font for headers */
+}
+
+.medicationsTable tr:hover {
+    background-color: #f1f1f1; /* Light hover effect for rows */
+}

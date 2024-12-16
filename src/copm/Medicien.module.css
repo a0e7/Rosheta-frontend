@@ -1,0 +1,202 @@
+/* src/Medicien.module.css */
+
+/* General Page Layout */
+.pageContainer {
+    display: flex; /* Use Flexbox for layout */
+    background-color: #f4f5f7;
+
+}
+  .navbar {
+        width: 250px; /* Fixed width for the navbar */
+        height: 100vh; /* Full height of the viewport */
+    }
+
+.headerIcon {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 24px; /* Icon size */
+    vertical-align: middle; /* Align icon vertically with text */
+}
+
+.h1 {
+    background-color: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+/* Medication Icon Styles */
+.medicationIcon {
+    margin-right: 8px; /* Space between icon and medication name */
+    font-size: 20px; /* Icon size */
+    vertical-align: middle; /* Align icon vertically with text */
+}
+
+/* Medication Container */
+.medicationContainer {
+    flex: 1; /* Take up the remaining space */
+    padding: 20px; /* Padding around the content */
+    background-color: #f9f9f9; /* Light gray background for the content area */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 2rem; /* Space around the container */
+}
+/* Icon Styles for Table Headers */
+
+  
+  .medicationTable th svg {
+    margin-right: 5px;  /* Space between icon and text */
+    color: #007bff;     /* Color for the icons */
+    font-size: 1.2em;   /* Size of the icons */
+  }
+  
+  .medicationIcon {
+    margin-right: 8px;  /* Space between icon and medication name */
+    color: #28a745;     /* Color for the medication icon */
+  }
+
+/* Headings */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Font size for the title */
+}
+
+/* Search Bar Styles */
+.searchWrapper {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below the search bar */
+}
+
+.searchBar {
+    flex: 1; /* Allow search bar to take available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 10px; /* Space between the icon and search bar */
+}
+
+/* Icon Styles */
+.searchIcon {
+    color: #4a90e2; /* Icon color */
+    font-size: 20px; /* Icon size */
+    margin-right: 10px; /* Space between icon and input */
+}
+
+/* Create Button Styles */
+.createButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Make the button take the full width */
+    background: linear-gradient(135deg, #98ff98, #87ccef); /* Updated gradient background */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 0.5rem; /* Rounded corners */
+    padding: 0.75rem 1.5rem; /* Increased padding for better appearance */
+    font-size: 1.125rem; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-bottom: 2rem; /* Space below the button */
+    transition: background 0.3s, transform 0.3s; /* Smooth transition for background and transform */
+}
+
+.createButton:hover {
+    background: linear-gradient(135deg, #87ccef, #98ff98); /* Darker gradient on hover */
+}
+
+/* Medication List Styles */
+.medicationList {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
+
+.medicationItem {
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border for items */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Space between items */
+    background-color: #f9f9f9; /* Light gray background for items */
+}
+
+/* Optional: Add hover effect for medication items */
+.medicationItem:hover {
+    background-color: #f1f1f1; /* Light gray on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+.medicationTable {
+    width: 100%;
+    border-collapse: collapse; /* Merge borders */
+}
+
+.medicationTable th,
+.medicationTable td {
+    padding: 1rem; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    /* Removed bottom border */
+}
+
+.medicationTable th {
+    background-color: #e9ecef; /* Light gray background for headers */
+    color: #333; /* Dark text for headers */
+    font-weight: bold; /* Bold font for headers */
+}
+
+/* Removed bottom border from rows */
+.medicationTable tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Action Buttons */
+.actionButtons {
+    display: flex;
+    gap: 0.5rem; /* Space between buttons */
+}
+
+.actionButton {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: #333; /* Button color, matching Pharmacist */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: color 0.3s; /* Smooth transition for color */
+}
+
+.actionButton:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Confirm Delete Styles */
+.confirmDelete {
+    background-color: #fff3cd; /* Light yellow background */
+    border: 1px solid #ffeeba; /* Border color */
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.confirmButton {
+    background-color: #28a745; /* Green for confirm */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.cancelButton {
+    background-color: #dc3545; /* Red for cancel */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+/* No Data Message */
+.noData {
+    text-align: center;
+    color: #777; /* Gray text for no data message */
+    font-style: italic;
+}
