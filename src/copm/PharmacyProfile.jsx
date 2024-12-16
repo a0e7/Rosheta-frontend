@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./PharmacyProfile.module.css"; // Import your CSS module
 import PharmacistNavbar from "./PharmacistNavbar"; // Import the Navbar component
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import {
   FaBuilding,
   FaPhone,
@@ -37,7 +37,7 @@ const PharmacyProfile = () => {
   }, [id, token]); // Dependency array includes id and token
 
   if (!pharmacyData) {
-    return <div>Loading...</div>; // Show a loading state while fetching data
+    return <div></div>; // Show a loading state while fetching data
   }
 
   return (
@@ -45,25 +45,34 @@ const PharmacyProfile = () => {
       <PharmacistNavbar />
       <div className={styles.profileContainer}>
         <h1>
-          <FaStore style={{ marginRight: '10px', color: '#4a90e2' }} />
+          <FaStore style={{ marginRight: "10px", color: "#4a90e2" }} />
           {pharmacyData.pharmacyName}
         </h1>
         <div className={styles.infoContainer}>
           <div className={styles.infoSection}>
             <FaBuilding className={styles.icon} />
-            <span><strong>Location:</strong> {pharmacyData.pharmacyLocation}</span>
+            <span>
+              <strong>Location:</strong> {pharmacyData.pharmacyLocation}
+            </span>
           </div>
           <div className={styles.infoSection}>
             <FaPhone className={styles.icon} />
-            <span><strong>Phone:</strong> {pharmacyData.phoneNumber}</span>
+            <span>
+              <strong>Phone:</strong> {pharmacyData.phoneNumber}
+            </span>
           </div>
           <div className={styles.infoSection}>
             <FaUser className={styles.icon} />
-            <span><strong>Employee:</strong> {pharmacyData.pharmacyEmployee}</span>
+            <span>
+              <strong>Employee:</strong> {pharmacyData.pharmacyEmployee}
+            </span>
           </div>
           <div className={styles.infoSection}>
             <FaIdBadge className={styles.icon} />
-            <span><strong>Employee Number:</strong> {pharmacyData.pharmacyEmployeeNumber}</span>
+            <span>
+              <strong>Employee Number:</strong>{" "}
+              {pharmacyData.pharmacyEmployeeNumber}
+            </span>
           </div>
         </div>
         <Link to="/resetpassword">
@@ -74,4 +83,4 @@ const PharmacyProfile = () => {
   );
 };
 
-export default PharmacyProfile; 
+export default PharmacyProfile;

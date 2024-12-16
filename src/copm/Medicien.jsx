@@ -11,8 +11,8 @@ import {
   FaEye,
   FaEdit,
   FaTrash,
-  FaUser,        // Icon for Name
-  FaBuilding      // Icon for Company
+  FaUser, // Icon for Name
+  FaBuilding, // Icon for Company
 } from "react-icons/fa";
 
 const Medicien = () => {
@@ -69,7 +69,7 @@ const Medicien = () => {
 
       // Show success message or perform any other actions here
       alert("Medication deleted successfully.");
-      setMedications(medications.filter(med => med._id !== confirmDeleteId)); // Remove from state
+      setMedications(medications.filter((med) => med._id !== confirmDeleteId)); // Remove from state
     } catch (error) {
       console.error("Error deleting medication:", error);
       alert("Failed to delete medication. Please try again.");
@@ -108,19 +108,22 @@ const Medicien = () => {
         <table className={styles.medicationTable}>
           <thead>
             <tr>
-              <th><FaPills /> Name</th>
-              <th><FaBuilding /> Company</th>
-              <th><FaEye /> Actions</th>
+              <th>
+                <FaPills /> Name
+              </th>
+              <th>
+                <FaBuilding /> Company
+              </th>
+              <th>
+                <FaEye /> Actions
+              </th>
             </tr>
           </thead>
           <tbody>
             {filteredMedications.length > 0 ? (
               filteredMedications.map((med) => (
                 <tr key={med._id}>
-                  <td>
-                 
-                    {med.medicineName}
-                  </td>
+                  <td>{med.medicineName}</td>
                   <td>{med.medicineCompany}</td>
                   <td className={styles.actionButtons}>
                     <Link to={`/medicienva/${med._id}`}>

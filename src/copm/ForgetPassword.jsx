@@ -1,43 +1,68 @@
-import React, { useState } from 'react';
-import styles from './ForgetPassword.module.css';
-import { Link } from 'react-router-dom';
-import { FaPhone, FaKey, FaPaperPlane } from 'react-icons/fa';
+import React, { useState } from "react";
+import axios from "axios"; // Import Axios
+import styles from "./ForgetPassword.module.css";
+import { Link } from "react-router-dom";
+import { FaPhone, FaKey, FaPaperPlane } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const ForgetPassword = () => {
-  const [phone, setPhone] = useState('');
-  const [code, setCode] = useState('');
-  const [newPassword, setNewPassword] = useState('');
+  const navigate = useNavigate();
+
+  const [phone, setPhone] = useState("");
+  const [code, setCode] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   const [step, setStep] = useState(1); // Track the current step
-  const [message, setMessage] = useState(''); // State for message
+  const [message, setMessage] = useState(""); // State for message
+  const [errorMessage, setErrorMessage] = useState(""); // For error messages
 
-  const handlePhoneChange = (e) => {
-    setPhone(e.target.value);
-  };
-
-  const handleCodeChange = (e) => {
-    setCode(e.target.value);
-  };
-
-  const handleNewPasswordChange = (e) => {
-    setNewPassword(e.target.value);
-  };
-
-  const handleButtonClick = () => {
+  const handleButtonClick = async () => {
     if (step === 1) {
-      // Simulate sending the code
-      console.log('Code sent to:', phone);
-      setMessage('A verification code has been sent to your phone.');
-      setStep(2); // Move to the next step
+      // Step 1: Send verification code
+      try {
+        const response = await axios.post("http://localhost:8090/auth/verfiy", {
+          phoneNumber: phone,
+        });
+        setMessage(response.data.message);
+        setStep(2); // Move to the next step
+      } catch (error) {
+        console.error("Error sending verification code:", error);
+        setErrorMessage(
+          error.response?.data?.message || "Failed to send code."
+        );
+      }
     } else if (step === 2) {
-      // Simulate code verification
-      console.log('Code entered:', code);
-      setMessage('Code verified successfully, please set your new password.');
-      setStep(3); // Move to new password step
+      // Step 2: Verify the code
+      try {
+        const response = await axios.post("http://localhost:8090/auth/verfiy", {
+          phoneNumber: phone,
+          verificationCode: code,
+        });
+        setMessage(response.data.message);
+        setStep(3); // Move to new password step
+      } catch (error) {
+        console.error("Error verifying code:", error);
+        setErrorMessage(error.response?.data?.message || "Invalid code.");
+      }
     } else if (step === 3) {
-      // Logic to submit the new password
-      console.log('New password set:', newPassword);
-      setMessage('Your password has been reset successfully!');
-      // Add further logic to handle the password reset (e.g., API call)
+      // Step 3: Reset password
+      try {
+        const response = await axios.put(
+          "http://localhost:8090/auth/forgetPassword",
+          {
+            phoneNumber: phone,
+            newPassword,
+          }
+        );
+        setMessage(response.data.message);
+        setNewPassword(""); // Clear new password field
+        setErrorMessage(""); // Clear any previous error messages
+        navigate("/");
+      } catch (error) {
+        console.error("Error resetting password:", error);
+        setErrorMessage(
+          error.response?.data?.message || "Failed to reset password."
+        );
+      }
     }
   };
 
@@ -47,53 +72,71 @@ const ForgetPassword = () => {
       <div className={styles.formSide}>
         <div className={styles.form}>
           <h2>Forget Password</h2>
-          {message && <div className={styles.message}>{message}</div>} {/* Display message */}
+          {message && <div className={styles.message}>{message}</div>}
+          {errorMessage && (
+            <div className={styles.errorMessage}>{errorMessage}</div>
+          )}
           <form onSubmit={(e) => e.preventDefault()}>
             <div className={styles.inputWrapper}>
               <FaPhone className={styles.icon} />
               <input
-                type="tel"
+                type="number"
                 placeholder="Enter your phone number"
                 value={phone}
-                onChange={handlePhoneChange}
+                onChange={(e) => setPhone(e.target.value)}
                 required
                 className={styles.input}
-                style={{ display: step >= 1 ? 'block' : 'none' }} // Always show this field
+                style={{ display: step >= 1 ? "block" : "none" }} // Always show this field
               />
             </div>
 
-            <div className={styles.inputWrapper}>
+            <div
+              className={styles.inputWrapper}
+              style={{ display: step >= 2 ? "block" : "none" }}
+            >
               <FaKey className={styles.icon} />
               <input
                 type="text"
                 placeholder="Enter the code"
                 value={code}
-                onChange={handleCodeChange}
+                onChange={(e) => setCode(e.target.value)}
                 required
                 className={styles.input}
-                style={{ display: step >= 2 ? 'block' : 'none' }} // Show this field if step is 2 or higher
               />
             </div>
 
-            <div className={styles.inputWrapper}>
+            <div
+              className={styles.inputWrapper}
+              style={{ display: step >= 3 ? "block" : "none" }}
+            >
               <FaKey className={styles.icon} />
               <input
                 type="password"
                 placeholder="Enter your new password"
                 value={newPassword}
-                onChange={handleNewPasswordChange}
+                onChange={(e) => setNewPassword(e.target.value)}
                 required
                 className={styles.input}
-                style={{ display: step >= 3 ? 'block' : 'none' }} // Show this field if step is 3
               />
             </div>
 
-            <button type="button" onClick={handleButtonClick} className={styles.button}>
-              <FaPaperPlane /> {step === 1 ? 'Send Code' : step === 2 ? 'Submit Code' : 'Submit New Password'}
+            <button
+              type="button"
+              onClick={handleButtonClick}
+              className={styles.button}
+            >
+              <FaPaperPlane />{" "}
+              {step === 1
+                ? "Send Code"
+                : step === 2
+                ? "Submit Code"
+                : "Submit New Password"}
             </button>
 
             <div className={styles.forgotPassword}>
-              <Link to='/' className={styles.link}>Back to Login</Link>
+              <Link to="/" className={styles.link}>
+                Back to Login
+              </Link>
             </div>
           </form>
         </div>

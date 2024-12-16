@@ -5,11 +5,23 @@ import { jwtDecode } from "jwt-decode";
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
   const token = localStorage.getItem("token");
-  const role = jwtDecode(token);
 
-  // Check if user role exists and is allowed
-  if (!role.role || !allowedRoles.includes(role.role)) {
-    return <Navigate to="/" />; // Redirect to login if not authorized
+  // Check if the token exists
+  if (!token) {
+    return <Navigate to="/" replace />; // Redirect to login if no token
+  }
+
+  try {
+    const decodedToken = jwtDecode(token); // Decode the token
+    const userRole = decodedToken.role;
+
+    // Check if user role exists and is allowed
+    if (!userRole || !allowedRoles.includes(userRole)) {
+      return <Navigate to="/" replace />; // Redirect if not authorized
+    }
+  } catch (error) {
+    console.error("Token validation error:", error);
+    return <Navigate to="/" replace />; // Redirect if token is invalid
   }
 
   return children; // Render the protected component

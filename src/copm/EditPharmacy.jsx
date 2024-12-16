@@ -20,7 +20,6 @@ const EditPharmacy = () => {
     phoneNumber: "",
     pharmacyEmployee: "",
     pharmacyEmployeeNumber: "",
-    password: "",
   });
 
   const [showModal, setShowModal] = useState(false); // State to control modal visibility
@@ -39,7 +38,7 @@ const EditPharmacy = () => {
             },
           }
         ); // Adjust the API endpoint to fetch the pharmacy
-        setPharmacyData(response.data.pharmacy); // Populate the form with existing data
+        setPharmacyData(response.data.pharamacy); // Populate the form with existing data
       } catch (error) {
         console.error("Error fetching pharmacy data:", error);
       }

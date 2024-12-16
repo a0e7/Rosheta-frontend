@@ -1,172 +1,195 @@
 .pageContainer {
-    display: flex; 
-
-    height: 100vh; 
-    font-family: 'Arial', sans-serif; 
-    background-color: #f7f9fc; 
-    margin: 0; 
-    padding: 0; 
+  display: flex;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+  background-color: #f7f9fc;
+  margin: 0;
+  padding: 0;
 }
 
 .formContainer {
-    flex: 1; 
-    padding: 40px; 
-    background-color: #ffffff; 
-    border-left: 1px solid #e0e0e0; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
-    overflow-y: auto; 
-    border-radius: 10px; 
-    transition: box-shadow 0.3s, transform 0.3s; 
+  flex: 1;
+  padding: 40px;
+  background-color: #ffffff;
+  border-left: 1px solid #e0e0e0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  border-radius: 10px;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
 h1 {
-    color: #333; 
-    text-align: center; 
-    margin-bottom: 30px; 
-    font-size: 32px; 
-    font-weight: 700; 
-    line-height: 1.2; 
-    letter-spacing: 0.5px; 
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
 }
 
 .inputField {
-    width: 100%; 
-    padding: 15px; 
-    margin-bottom: 20px; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    margin: 20px;
-    font-size: 16px; 
-    transition: border-color 0.3s, box-shadow 0.3s; 
-    background-color: #fafafa; 
-    color: #333; 
-    appearance: none;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #fafafa;
+  color: #333;
+  appearance: none;
 }
 
 .additionalInputGroup {
-    display: flex; 
-    align-items: center; 
-    margin-bottom: 15px; 
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .inputWithIcon {
-    position: relative; 
-    display: flex; 
-    align-items: center; 
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .inputWithIcon .icon {
-    font-size: 20px; 
-    color: #87ceeb; 
-    margin-right: 10px; 
+  font-size: 20px;
+  color: #87ceeb;
+  margin-right: 10px;
 }
 
 .medicationContainer {
-    display: flex; 
-    flex: 1; 
-    align-items: center; 
-    margin-top: 10px; 
-    gap: 10px; 
+  display: flex;
+  flex: 1;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
 }
 
 .deleteButton {
-    background: none; 
-    border: none; 
-    cursor: pointer; 
-    padding: 0; 
-    margin-left: 10px; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
 }
 
 .deleteIcon {
-    font-size: 20px; 
-    color: #ff4d4d; 
-    transition: color 0.3s; 
+  font-size: 20px;
+  color: #ff4d4d;
+  transition: color 0.3s;
 }
 
 .deleteButton:hover .deleteIcon {
-    color: #ff1a1a; 
+  color: #ff1a1a;
 }
 
 .addButton {
-    padding: 12px 20px; 
-    font-size: 16px; 
-    color: #ffffff; 
-    background-color: #98ff98; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    display: flex; 
-    align-items: center; 
-    transition: background-color 0.3s, transform 0.3s; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 20px; 
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #98ff98;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .addButton:hover {
-    background-color: #87ceeb; 
-    transform: translateY(-2px); 
+  background-color: #87ceeb;
+  transform: translateY(-2px);
 }
 
 .createButton {
-    padding: 12px 20px; 
-    background-color: #4a90e2; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    transition: background-color 0.3s, transform 0.3s; 
-    width: 100%; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  padding: 12px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .createButton:hover {
-    background-color: #98ff98; 
-    transform: translateY(-2px); 
+  background-color: #98ff98;
+  transform: translateY(-2px);
 }
 
 .createButton:active {
-    transform: translateY(0); 
+  transform: translateY(0);
 }
+
 .alertOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .alert {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .alert h2 {
-    margin: 0 0 10px;
-    color: green; /* Success color */
-  }
-  
-  .alert p {
-    margin: 0 0 20px;
-  }
-  
-  .alert button {
-    padding: 10px 15px;
-    background-color: #007bff; /* Alert button color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .alert button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.alert {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.alert h2 {
+  margin: 0 0 10px;
+  color: green; /* Success color */
+}
+
+.alert p {
+  margin: 0 0 20px;
+}
+
+.alert button {
+  padding: 10px 15px;
+  background-color: #007bff; /* Alert button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.alert button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* New styles for search results */
+.searchResults {
+  margin-top: 150px;
+  position: absolute; /* Position dropdown below the input */
+  background-color: white; /* Background color */
+  border: 1px solid #ccc; /* Border for the dropdown */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 100%; /* Match the width of the input field */
+  max-height: 200px; /* Limit height */
+  overflow-y: auto; /* Scroll if too many results */
+}
+
+.searchItem {
+  padding: 10px; /* Padding for each item */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.searchItem:hover {
+  background-color: #f0f0f0; /* Highlight on hover */
+}

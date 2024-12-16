@@ -69,7 +69,9 @@ const EditMedicen = () => {
     formData.append("medicineChemicalName", medicienData.medicineChemicalName);
     formData.append("medicineCompany", medicienData.medicineCompany);
     formData.append("medicineOrgin", medicienData.medicineOrgin);
-    formData.append("image", medicienData.image);
+    if (medicienData.image instanceof File) {
+      formData.append("image", medicienData.image);
+    }
 
     try {
       const response = await axios.put(
@@ -152,7 +154,6 @@ const EditMedicen = () => {
               type="file"
               name="image"
               onChange={handleFileChange}
-              required
               className={styles.inputField}
             />
           </div>

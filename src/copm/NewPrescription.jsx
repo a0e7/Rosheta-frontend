@@ -71,7 +71,9 @@ const NewPrescription = () => {
 
   const handleDeletePrescription = (index) => {
     setFormData((prevState) => {
-      const updatedPrescriptions = prevState.prescriptionDetails.filter((_, i) => i !== index);
+      const updatedPrescriptions = prevState.prescriptionDetails.filter(
+        (_, i) => i !== index
+      );
       return { ...prevState, prescriptionDetails: updatedPrescriptions };
     });
   };
@@ -86,7 +88,9 @@ const NewPrescription = () => {
         const key = match[2];
 
         setFormData((prevState) => {
-          const updatedPrescriptions = [...(prevState.prescriptionDetails || [])];
+          const updatedPrescriptions = [
+            ...(prevState.prescriptionDetails || []),
+          ];
           updatedPrescriptions[index] = {
             ...updatedPrescriptions[index],
             [key]: value,

@@ -47,7 +47,7 @@ const DocterProfile = () => {
   }, [id, token]); // Dependency array includes id and token
 
   if (!doctorData) {
-    return <div>Loading...</div>; // Show a loading state while fetching data
+    return <div></div>; // Show a loading state while fetching data
   }
 
   return (
