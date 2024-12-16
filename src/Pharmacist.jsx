@@ -16,7 +16,7 @@ const Pharmacist = () => {
       const token = localStorage.getItem("token");
       try {
         const response = await axios.get(
-          "http://localhost:8090/admin/get-Pharmacies",
+          "https://api.rosheta.info/admin/get-Pharmacies",
           {
             headers: {
               Authorization: `Bearer ${token}`, // Send token with request
@@ -42,8 +42,8 @@ const Pharmacist = () => {
     if (confirm) {
       try {
         const endpoint = isActive
-          ? `http://localhost:8090/admin/deactivate-Pharmacy/${id}`
-          : `http://localhost:8090/admin/activate-Pharmacy/${id}`;
+          ? `https://api.rosheta.info/admin/deactivate-Pharmacy/${id}`
+          : `https://api.rosheta.info/admin/activate-Pharmacy/${id}`;
 
         // Send request to the appropriate endpoint
         await axios.patch(endpoint, {
@@ -58,7 +58,7 @@ const Pharmacist = () => {
           }.`
         );
         window.location.reload(); // Refresh the page
-    } catch (error) {
+      } catch (error) {
         console.error("Error updating pharmacy status:", error);
       } finally {
         setConfirmDeactivateId(null); // Reset confirmation state

@@ -19,7 +19,7 @@ const ResetPassword = () => {
       const token = localStorage.getItem("token")?.replace(/^"|"$/g, ""); // Retrieve token from localStorage
       const decodedToken = jwtDecode(token);
       const response = await axios.put(
-        "http://localhost:8090/auth/resetPassword",
+        "https://api.rosheta.info/auth/resetPassword",
         {
           oldPassword,
           newPassword,

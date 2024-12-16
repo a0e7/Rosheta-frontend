@@ -21,7 +21,7 @@ const ViewDp = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:8090/doctor/get-Prescription/${id}`,
+          `https://api.rosheta.info/doctor/get-Prescription/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

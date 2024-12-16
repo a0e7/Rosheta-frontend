@@ -25,7 +25,7 @@ const PharmacistPrescription = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:8090/doctor/get-Prescription/${id}`,
+          `https://api.rosheta.info/doctor/get-Prescription/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -75,7 +75,7 @@ const PharmacistPrescription = () => {
     const token = localStorage.getItem("token")?.replace(/^"|"$/g, "");
     try {
       const response = await axios.put(
-        `http://localhost:8090/pharmacy/dispense-Prescription/${formData._id}`,
+        `https://api.rosheta.info/pharmacy/dispense-Prescription/${formData._id}`,
         newformData,
         {
           headers: { Authorization: `Bearer ${token}` },

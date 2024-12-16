@@ -31,7 +31,7 @@ const EditPharmacy = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:8090/admin/get-Pharmacy/${id}`,
+          `https://api.rosheta.info/admin/get-Pharmacy/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // Send token with request
@@ -70,7 +70,7 @@ const EditPharmacy = () => {
     );
     try {
       const response = await axios.put(
-        `http://localhost:8090/admin/edit-Pharmacy/${id}`,
+        `https://api.rosheta.info/admin/edit-Pharmacy/${id}`,
         formData,
         {
           headers: {

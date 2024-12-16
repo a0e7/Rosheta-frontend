@@ -37,7 +37,7 @@ const NewPrescriptionED = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:8090/doctor/get-Prescription/${id}`,
+          `https://api.rosheta.info/doctor/get-Prescription/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -64,7 +64,7 @@ const NewPrescriptionED = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:8090/doctor/medicine-Search?query=${value}`,
+          `https://api.rosheta.info/doctor/medicine-Search?query=${value}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -135,7 +135,7 @@ const NewPrescriptionED = () => {
       console.error("Prescription details are not properly initialized.");
       return;
     }
-    
+
     const newFormData = new FormData();
 
     newFormData.append("patientName", formData.patientName);
@@ -152,7 +152,7 @@ const NewPrescriptionED = () => {
 
     try {
       await axios.put(
-        `http://localhost:8090/doctor/edit-Prescription/${id}`,
+        `https://api.rosheta.info/doctor/edit-Prescription/${id}`,
         newFormData,
         {
           headers: {

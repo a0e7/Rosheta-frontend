@@ -45,7 +45,7 @@ const CreatMedicien = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8090/admin/add-Medicine",
+        "https://api.rosheta.info/admin/add-Medicine",
         formData,
         {
           headers: {

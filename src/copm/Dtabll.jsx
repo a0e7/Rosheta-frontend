@@ -25,7 +25,7 @@ const Dtaball = () => {
 
       try {
         const response = await axios.get(
-          "http://localhost:8090/doctor/get-Prescriptions",
+          "https://api.rosheta.info/doctor/get-Prescriptions",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -42,13 +42,15 @@ const Dtaball = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this prescription?");
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this prescription?"
+    );
     if (!confirmDelete) return;
 
     const token = localStorage.getItem("token")?.replace(/^"|"$/g, "");
     try {
       await axios.delete(
-        `http://localhost:8090/doctor/delete-Prescription/${id}`,
+        `https://api.rosheta.info/doctor/delete-Prescription/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -68,8 +70,12 @@ const Dtaball = () => {
 
   const filteredPrescriptions = prescriptions.filter((prescription) => {
     return (
-      (prescription.patientName?.toLowerCase() || "").includes(searchTerm?.toLowerCase() || "") ||
-      (prescription.prescriptionId?.toString() || "").includes(searchTerm?.toLowerCase() || "")
+      (prescription.patientName?.toLowerCase() || "").includes(
+        searchTerm?.toLowerCase() || ""
+      ) ||
+      (prescription.prescriptionId?.toString() || "").includes(
+        searchTerm?.toLowerCase() || ""
+      )
     );
   });
 
@@ -95,11 +101,21 @@ const Dtaball = () => {
           <table className={styles.prescriptionTable}>
             <thead>
               <tr>
-                <th><FaUser className={styles.icon} /> ID</th>
-                <th><FaUser className={styles.icon} /> Patient Name</th>
-                <th><FaUserMd className={styles.icon} /> Doctor Name</th>
-                <th><FaCalendarAlt className={styles.icon} /> Date</th>
-                <th><FaHospital className={styles.icon} /> Pharmacy</th>
+                <th>
+                  <FaUser className={styles.icon} /> ID
+                </th>
+                <th>
+                  <FaUser className={styles.icon} /> Patient Name
+                </th>
+                <th>
+                  <FaUserMd className={styles.icon} /> Doctor Name
+                </th>
+                <th>
+                  <FaCalendarAlt className={styles.icon} /> Date
+                </th>
+                <th>
+                  <FaHospital className={styles.icon} /> Pharmacy
+                </th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -109,7 +125,9 @@ const Dtaball = () => {
                   <td>{prescription.prescriptionId}</td>
                   <td>{prescription.patientName}</td>
                   <td>{prescription.doctorName}</td>
-                  <td>{new Date(prescription.createdAt).toLocaleDateString()}</td>
+                  <td>
+                    {new Date(prescription.createdAt).toLocaleDateString()}
+                  </td>
                   <td>{prescription.pharmacyName || "N/A"}</td>
                   <td className={styles.actionIcons}>
                     <Link to={`/viwedp/${prescription._id}`}>

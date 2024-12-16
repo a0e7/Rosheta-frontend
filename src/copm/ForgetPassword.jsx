@@ -19,9 +19,12 @@ const ForgetPassword = () => {
     if (step === 1) {
       // Step 1: Send verification code
       try {
-        const response = await axios.post("http://localhost:8090/auth/verfiy", {
-          phoneNumber: phone,
-        });
+        const response = await axios.post(
+          "https://api.rosheta.info/auth/verfiy",
+          {
+            phoneNumber: phone,
+          }
+        );
         setMessage(response.data.message);
         setStep(2); // Move to the next step
       } catch (error) {
@@ -33,10 +36,13 @@ const ForgetPassword = () => {
     } else if (step === 2) {
       // Step 2: Verify the code
       try {
-        const response = await axios.post("http://localhost:8090/auth/verfiy", {
-          phoneNumber: phone,
-          verificationCode: code,
-        });
+        const response = await axios.post(
+          "https://api.rosheta.info/auth/verfiy",
+          {
+            phoneNumber: phone,
+            verificationCode: code,
+          }
+        );
         setMessage(response.data.message);
         setStep(3); // Move to new password step
       } catch (error) {
@@ -47,7 +53,7 @@ const ForgetPassword = () => {
       // Step 3: Reset password
       try {
         const response = await axios.put(
-          "http://localhost:8090/auth/forgetPassword",
+          "https://api.rosheta.info/auth/forgetPassword",
           {
             phoneNumber: phone,
             newPassword,

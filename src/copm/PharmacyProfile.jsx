@@ -21,7 +21,7 @@ const PharmacyProfile = () => {
     const fetchPharmacyData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8090/pharmacy/profile-Data`,
+          `https://api.rosheta.info/pharmacy/profile-Data`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

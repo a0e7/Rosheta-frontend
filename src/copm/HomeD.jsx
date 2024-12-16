@@ -18,7 +18,7 @@ const Homed = () => {
       const token = localStorage.getItem("token")?.replace(/^"|"$/g, ""); // Retrieve token from localStorage
       try {
         const response = await axios.patch(
-          "http://localhost:8090/doctor/count-Prescription",
+          "https://api.rosheta.info/doctor/count-Prescription",
           {},
           {
             headers: {

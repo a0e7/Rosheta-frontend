@@ -36,7 +36,7 @@ const EditDocter = () => {
       const token = localStorage.getItem("token");
       try {
         const response = await axios.get(
-          `http://localhost:8090/admin/get-Doctor/${id}`,
+          `https://api.rosheta.info/admin/get-Doctor/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -136,7 +136,7 @@ const EditDocter = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8090/admin/edit-Doctor/${id}`,
+        `https://api.rosheta.info/admin/edit-Doctor/${id}`,
         formData,
         {
           headers: {

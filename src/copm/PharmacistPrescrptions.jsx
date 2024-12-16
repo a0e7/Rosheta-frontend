@@ -26,7 +26,7 @@ const PharmacistPrescriptions = () => {
     const token = localStorage.getItem("token")?.replace(/^"|"$/g, "");
     try {
       const response = await axios.get(
-        `http://localhost:8090/pharmacy/search-Prescription/${prescriptionCount}`,
+        `https://api.rosheta.info/pharmacy/search-Prescription/${prescriptionCount}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -59,25 +59,31 @@ const PharmacistPrescriptions = () => {
 
   // Submit updated prescription details
   const handleSubmit = async () => {
-    if (!formData.prescriptionDetails || !Array.isArray(formData.prescriptionDetails)) {
+    if (
+      !formData.prescriptionDetails ||
+      !Array.isArray(formData.prescriptionDetails)
+    ) {
       console.error("Prescription details are not properly initialized.");
       return;
     }
-    
+
     const newformData = new FormData();
     newformData.append("patientName", formData.patientName);
     newformData.append("phoneNumber", formData.phoneNumber);
 
     formData.prescriptionDetails.forEach((prescription, index) => {
       Object.keys(prescription).forEach((key) => {
-        newformData.append(`prescriptionDetails[${index}][${key}]`, prescription[key]);
+        newformData.append(
+          `prescriptionDetails[${index}][${key}]`,
+          prescription[key]
+        );
       });
     });
 
     const token = localStorage.getItem("token")?.replace(/^"|"$/g, "");
     try {
       const response = await axios.put(
-        `http://localhost:8090/pharmacy/dispense-Prescription/${formData._id}`,
+        `https://api.rosheta.info/pharmacy/dispense-Prescription/${formData._id}`,
         newformData,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -168,7 +174,8 @@ const PharmacistPrescriptions = () => {
 
             {/* Submit Button */}
             <button className={styles.submitButton} onClick={handleSubmit}>
-              <FaCheckCircle className={styles.icon} /> Submit Selected Medications
+              <FaCheckCircle className={styles.icon} /> Submit Selected
+              Medications
             </button>
           </>
         )}

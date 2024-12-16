@@ -21,7 +21,7 @@ const DocterProfile = () => {
     const fetchDoctorData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8090/doctor/profile-Data`,
+          `https://api.rosheta.info/doctor/profile-Data`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -61,7 +61,7 @@ const DocterProfile = () => {
         <div className={styles.imageContainer}>
           {doctorData.image ? (
             <img
-              src={"http://localhost:8090/" + doctorData.image}
+              src={"https://api.rosheta.info/" + doctorData.image}
               alt="Doctor"
               className={styles.profileImage}
             />

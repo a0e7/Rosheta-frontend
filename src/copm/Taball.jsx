@@ -22,7 +22,7 @@ const Taball = () => {
       try {
         // Fetch all prescriptions if id is not provided; otherwise fetch by id
         const response = await axios.get(
-          "http://localhost:8090/doctor/get-Prescriptions",
+          "https://api.rosheta.info/doctor/get-Prescriptions",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

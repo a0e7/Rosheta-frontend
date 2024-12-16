@@ -12,9 +12,9 @@ import {
   FaEye,
   FaCheckCircle, // Icon for activation
   FaTimesCircle, // Icon for deactivation
-  FaUser,        // Icon for Name
-  FaBriefcase,    // Icon for Proficiency
-  FaPhone        // Icon for Phone
+  FaUser, // Icon for Name
+  FaBriefcase, // Icon for Proficiency
+  FaPhone, // Icon for Phone
 } from "react-icons/fa";
 
 const DocterAD = () => {
@@ -26,7 +26,7 @@ const DocterAD = () => {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.get(
-        "http://localhost:8090/admin/get-Doctors",
+        "https://api.rosheta.info/admin/get-Doctors",
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -60,8 +60,8 @@ const DocterAD = () => {
     if (confirm) {
       try {
         const endpoint = isActive
-          ? `http://localhost:8090/admin/deactivate-Doctor/${id}`
-          : `http://localhost:8090/admin/activate-Doctor/${id}`;
+          ? `https://api.rosheta.info/deactivate-Doctor/${id}`
+          : `https://api.rosheta.info/activate-Doctor/${id}`;
 
         // Send request to the appropriate endpoint
         await axios.patch(endpoint, {
@@ -75,7 +75,7 @@ const DocterAD = () => {
             isActive ? "deactivated" : "activated"
           }.`
         );
-        
+
         // Refetch the list of doctors
         fetchDoctors();
       } catch (error) {
@@ -129,10 +129,18 @@ const DocterAD = () => {
           <table className={styles.doctorTable}>
             <thead>
               <tr>
-                <th><FaUser /> Name</th>
-                <th><FaBriefcase /> Proficiency</th>
-                <th><FaPhone /> Phone</th>
-                <th><FaEye /> Actions</th>
+                <th>
+                  <FaUser /> Name
+                </th>
+                <th>
+                  <FaBriefcase /> Proficiency
+                </th>
+                <th>
+                  <FaPhone /> Phone
+                </th>
+                <th>
+                  <FaEye /> Actions
+                </th>
               </tr>
             </thead>
             <tbody>

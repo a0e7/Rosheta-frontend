@@ -14,7 +14,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:8090/auth/login", {
+      const response = await axios.post("https://api.rosheta.info/auth/login", {
         phoneNumber: phoneNumber,
         password: password,
       });
@@ -27,17 +27,11 @@ const Login = () => {
 
       // Navigate based on the user role
       if (decodedToken.role === "admin") {
-        navigate("/admin", {
-          state: { adminName: phoneNumber, email: "ahmed@gnmail.com" },
-        });
+        navigate("/admin");
       } else if (decodedToken.role === "doctor") {
-        navigate("/homed", {
-          state: { doctorName: phoneNumber, email: "ameer@gmail.com" },
-        });
+        navigate("/homed");
       } else if (decodedToken.role === "pharmacy") {
-        navigate("/pharmacisthome", {
-          state: { pharmacistName: phoneNumber, email: "zied@gmail.com" },
-        });
+        navigate("/pharmacisthome");
       } else {
         setErrorMessage("Invalid role");
       }

@@ -19,7 +19,7 @@ const Viewpre = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:8090/pharmacy/get-Prescription/${id}`,
+          `https://api.rosheta.info/pharmacy/get-Prescription/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

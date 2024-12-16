@@ -22,7 +22,7 @@ const MedicienVA = () => {
         const token = localStorage.getItem("token");
         try {
           const response = await axios.get(
-            `http://localhost:8090/admin/get-Medicines/${id}`,
+            `https://api.rosheta.info/admin/get-Medicines/${id}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`, // Send token with request

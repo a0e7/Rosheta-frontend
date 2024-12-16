@@ -117,7 +117,7 @@ const CreatDocter = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8090/admin/add-Doctor",
+        "https://api.rosheta.info/admin/add-Doctor",
         formData,
         {
           headers: {

@@ -48,7 +48,7 @@ const CreatPharmacy = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8090/admin/add-Pharm",
+        "https://api.rosheta.info/admin/add-Pharm",
         formData,
         {
           headers: {

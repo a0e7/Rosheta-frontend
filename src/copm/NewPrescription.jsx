@@ -35,7 +35,7 @@ const NewPrescription = () => {
       const token = localStorage.getItem("token")?.replace(/^"|"$/g, "");
       try {
         const response = await axios.get(
-          `http://localhost:8090/doctor/medicine-Search?query=${value}`,
+          `https://api.rosheta.info/doctor/medicine-Search?query=${value}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -124,7 +124,7 @@ const NewPrescription = () => {
 
     try {
       await axios.post(
-        "http://localhost:8090/doctor/add-Prescription",
+        "https://api.rosheta.info/doctor/add-Prescription",
         newformData,
         {
           headers: {

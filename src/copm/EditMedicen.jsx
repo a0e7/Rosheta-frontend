@@ -75,7 +75,7 @@ const EditMedicen = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8090/admin/edit-Medicine/${id}`,
+        `https://api.rosheta.info/admin/edit-Medicine/${id}`,
         formData,
         {
           headers: {

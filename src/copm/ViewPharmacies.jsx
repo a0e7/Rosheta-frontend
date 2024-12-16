@@ -25,7 +25,7 @@ const ViewPharmacies = () => {
       if (id) {
         try {
           const response = await axios.get(
-            `http://localhost:8090/admin/get-Pharmacy/${id}`,
+            `https://api.rosheta.info/admin/get-Pharmacy/${id}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`, // Send token with request

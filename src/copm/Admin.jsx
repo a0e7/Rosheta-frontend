@@ -36,7 +36,7 @@ const Admin = () => {
       try {
         // Fetch total counts
         const response = await axios.patch(
-          "http://localhost:8090/admin/count-Users",
+          "https://api.rosheta.info/admin/count-Users",
           {
             headers: {
               Authorization: `Bearer ${token}`, // Send token with request
@@ -50,7 +50,7 @@ const Admin = () => {
           totalPatients: response.data.totalPatients,
         });
         const responsePre = await axios.patch(
-          "http://localhost:8090/admin/count-Presc"
+          "https://api.rosheta.info/admin/count-Presc"
         ); // Update with your API endpoint
         setCountsPre({
           prescriptions: responsePre.data.prescriptions,

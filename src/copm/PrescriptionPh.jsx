@@ -4,7 +4,15 @@ import PrscriptionsNavbar from "./PrscriptionsNavbar";
 import { useLocation, useParams, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FaEye, FaEdit, FaIdCard, FaUser, FaStore, FaCalendar, FaTools } from "react-icons/fa"; // Import icons
+import {
+  FaEye,
+  FaEdit,
+  FaIdCard,
+  FaUser,
+  FaStore,
+  FaCalendar,
+  FaTools,
+} from "react-icons/fa"; // Import icons
 
 const PrescriptionsPh = () => {
   const { id } = useParams(); // Get the prescription ID from the URL
@@ -18,7 +26,7 @@ const PrescriptionsPh = () => {
     const fetchPrescriptions = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8090/pharmacy/get-Prescriptions",
+          "https://api.rosheta.info/pharmacy/get-Prescriptions",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -64,11 +72,21 @@ const PrescriptionsPh = () => {
         <table className={styles.prescriptionTable}>
           <thead>
             <tr>
-              <th><FaIdCard /> ID</th>
-              <th><FaUser /> Patient Name</th>
-              <th><FaStore /> Pharmacy Name</th>
-              <th><FaCalendar /> Prescribed on</th>
-              <th><FaTools /> Action</th>
+              <th>
+                <FaIdCard /> ID
+              </th>
+              <th>
+                <FaUser /> Patient Name
+              </th>
+              <th>
+                <FaStore /> Pharmacy Name
+              </th>
+              <th>
+                <FaCalendar /> Prescribed on
+              </th>
+              <th>
+                <FaTools /> Action
+              </th>
             </tr>
           </thead>
           <tbody>

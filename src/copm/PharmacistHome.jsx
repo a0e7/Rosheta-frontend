@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import styles from "./PharmacistHome.module.css";
 import { useParams } from "react-router-dom"; // Import useParams for accessing URL parameters
 import PharmacistNavbar from "./PharmacistNavbar";
-import { FaFilePrescription, FaIdCard, FaUser, FaStore, FaCalendarAlt } from "react-icons/fa"; // Import icons
+import {
+  FaFilePrescription,
+  FaIdCard,
+  FaUser,
+  FaStore,
+  FaCalendarAlt,
+} from "react-icons/fa"; // Import icons
 import axios from "axios";
 
 const PharmacistHome = () => {
@@ -16,7 +22,7 @@ const PharmacistHome = () => {
     const fetchPrescriptions = async () => {
       try {
         const responsePre = await axios.patch(
-          "http://localhost:8090/pharmacy/count-Prescription",
+          "https://api.rosheta.info/pharmacy/count-Prescription",
           {},
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -25,7 +31,7 @@ const PharmacistHome = () => {
         setCountsPre(responsePre.data.dispensePrescriptions);
 
         const response = await axios.get(
-          "http://localhost:8090/pharmacy/get-Prescriptions",
+          "https://api.rosheta.info/pharmacy/get-Prescriptions",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -52,10 +58,18 @@ const PharmacistHome = () => {
         <table className={styles.prescriptionTable}>
           <thead>
             <tr>
-              <th><FaIdCard /> ID</th>
-              <th><FaUser /> Patient Name</th>
-              <th><FaStore /> Pharmacy</th>
-              <th><FaCalendarAlt /> Prescribed on</th>
+              <th>
+                <FaIdCard /> ID
+              </th>
+              <th>
+                <FaUser /> Patient Name
+              </th>
+              <th>
+                <FaStore /> Pharmacy
+              </th>
+              <th>
+                <FaCalendarAlt /> Prescribed on
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -65,7 +79,9 @@ const PharmacistHome = () => {
                   <td>{prescription.prescriptionId}</td>
                   <td>{prescription.patientName}</td>
                   <td>{prescription.pharmacyName}</td>
-                  <td>{new Date(prescription.createdAt).toLocaleDateString()}</td>
+                  <td>
+                    {new Date(prescription.createdAt).toLocaleDateString()}
+                  </td>
                 </tr>
               ))
             ) : (

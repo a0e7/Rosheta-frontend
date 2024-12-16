@@ -25,7 +25,7 @@ const Medicien = () => {
       const token = localStorage.getItem("token");
       try {
         const response = await axios.get(
-          "http://localhost:8090/admin/get-Medicines",
+          "https://api.rosheta.info/admin/get-Medicines",
           {
             headers: {
               Authorization: `Bearer ${token}`, // Send token with request
@@ -59,7 +59,7 @@ const Medicien = () => {
     try {
       // Send request to delete the medication by ID
       await axios.delete(
-        `http://localhost:8090/admin/delete-Medicine/${confirmDeleteId}`,
+        `https://api.rosheta.info/admin/delete-Medicine/${confirmDeleteId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`, // Send token with request
