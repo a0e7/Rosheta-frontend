@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Import Axios
 import styles from "./Login.module.css";
 import { jwtDecode } from "jwt-decode";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ const Login = () => {
       <div className={styles.imageSide}></div>
       <div className={styles.formSide}>
         <div className={styles.form}>
-          <h2>Login</h2>
+          <h2>Login Updated</h2>
           {errorMessage && <p className={styles.error}>{errorMessage}</p>}
           <input
             type="text"
@@ -72,7 +72,9 @@ const Login = () => {
             <FaSignOutAlt className={styles.icon} /> Login
           </button>
           <div className={styles.forgotPassword}>
-            <Link to='/forgetpassword' className={styles.link}>Forgot Password?</Link>
+            <Link to="/forgetpassword" className={styles.link}>
+              Forgot Password?
+            </Link>
           </div>
         </div>
       </div>
