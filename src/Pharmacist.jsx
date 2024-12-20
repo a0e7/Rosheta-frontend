@@ -97,69 +97,66 @@ const Pharmacist = () => {
           <table className={styles.pharmacistTable}>
             <thead>
               <tr>
-                <th className={styles.tableHeader}>Name</th>
-                <th className={styles.tableHeader}>Location</th>
-                <th className={styles.tableHeader}>Phone</th>
-                <th className={styles.tableHeader}>Actions</th>
+                <th>
+                  <FaUser /> Name
+                </th>
+                <th>
+                  <FaMapMarkerAlt /> Location
+                </th>
+                <th>
+                  <FaPhone /> Phone
+                </th>
+                <th>
+                  <FaEdit /> Actions
+                </th>
               </tr>
             </thead>
             <tbody>
               {filteredPharmacists.length > 0 ? (
                 filteredPharmacists.map((pharmacist) => (
-                  <tr key={pharmacist._id} className={styles.pharmacistRow}>
+                  <tr key={pharmacist.id} className={styles.pharmacistRow}>
                     <td>
-                      <FaUser className={styles.pharmacistIcon} />
-                      {pharmacist.pharmacyName}
+                      <FaUser className={styles.pharmacistIcon} />{" "}
+                      {pharmacist.name}
                     </td>
-                    <td>{pharmacist.pharmacyLocation}</td>
-                    <td>{pharmacist.phoneNumber}</td>
+                    <td>{pharmacist.location}</td>
+                    <td>{pharmacist.phone}</td>
                     <td className={styles.actionButtons}>
-                      <Link to={`/Viewpharmacies/${pharmacist._id}`}>
+                      <Link to={"/Viewpharmacies/"}>
                         <button className={styles.viewButton}>
                           <FaEye /> View
                         </button>
                       </Link>
-                      <Link to={`/editpharmacies/${pharmacist._id}`}>
+                      <Link to={"/editpharmacies/"}>
                         <button className={styles.editButton}>
                           <FaEdit /> Edit
                         </button>
                       </Link>
                       <button
+                        className={styles.activateButton}
                         onClick={() =>
-                          handleDeactivate(pharmacist._id, pharmacist.isActive)
-                        }
-                        className={
-                          pharmacist.isActive
-                            ? styles.deactivateButton
-                            : styles.activateButton
+                          handleActionClick(pharmacist.id, pharmacist.isActive)
                         }
                       >
-                        <FaBan
-                          style={{
-                            color: pharmacist.isActive ? "inherit" : "red",
-                          }}
-                        />
-                        {pharmacist.isActive ? "Deactivate" : "Activate"}
+                        {pharmacist.isActive ? (
+                          <FaCheckCircle style={{ color: "green" }} />
+                        ) : (
+                          <FaTimesCircle style={{ color: "red" }} />
+                        )}
                       </button>
-                      {confirmDeactivateId === pharmacist._id && (
+                      {confirmActionId === pharmacist.id && (
                         <div className={styles.confirmationPopup}>
                           <p>
                             Are you sure you want to{" "}
                             {pharmacist.isActive ? "deactivate" : "activate"}{" "}
-                            this Pharmacy?
+                            this pharmacist?
                           </p>
                           <button
-                            onClick={() =>
-                              handleDeactivate(
-                                pharmacist._id,
-                                pharmacist.isActive,
-                                true
-                              )
-                            }
+                            onClick={() => handleDeactivate(pharmacist.id)}
                           >
                             Yes
                           </button>
-                          <button onClick={() => setConfirmDeactivateId(null)}>
+                          <button onClick={() => setConfirmActionId(null)}>
                             No
                           </button>
                         </div>

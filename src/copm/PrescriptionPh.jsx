@@ -5,12 +5,13 @@ import { useLocation, useParams, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
+  FaPrescriptionBottleAlt,
+  FaUser,
+  FaCalendarAlt,
   FaEye,
   FaEdit,
   FaIdCard,
-  FaUser,
-  FaStore,
-  FaCalendar,
+  FaUserMd,
   FaTools,
 } from "react-icons/fa"; // Import icons
 
@@ -101,14 +102,12 @@ const PrescriptionsPh = () => {
                   </td>
                   <td>
                     <Link to={`/Viewpre/${prescription._id}`}>
-                      <button className={styles.viewButton}>
-                        <FaEye /> View
-                      </button>
+                      <FaEye className={styles.iconAction} />
+                      View
                     </Link>
                     <Link to={`/PharmacistPrescrption/${prescription._id}`}>
-                      <button className={styles.updateButton}>
-                        <FaEdit /> Update
-                      </button>
+                      <FaEdit className={styles.iconAction} />
+                      Update
                     </Link>
                   </td>
                 </tr>

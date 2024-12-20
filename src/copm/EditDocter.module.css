@@ -1,92 +1,123 @@
 /* src/admin/CreatDocter.module.css */
 
 .pageContainer {
-    display: flex;
+  display: flex;
+}
 
-  }
-  
-  .doctorContainer {
-    width: 100%;
-    max-width: 100%; /* Limit the width of the form */
-    padding: 2rem;
-    background-color: #f9f9f9; /* Light gray background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-  
-  h1 {
-    text-align: center; /* Center the title */
-    margin-bottom: 1.5rem; /* Space below the title */
-    color: #333; /* Darker text color */
-  }
-  
-  .inputWrapper {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem; /* Space between input fields */
-  }
-  
-  .icon {
-    margin-right: 0.5rem; /* Space between icon and input */
-    color: #6a11cb; /* Icon color */
-    font-size: 1.5rem; /* Icon size */
-  }
-  
-  .inputField {
-    flex: 1; /* Allow input to take available space */
-    padding: 0.75rem; /* Padding inside the input */
-    border: 1px solid #d1d5db; /* Light gray border */
-    border-radius: 0.5rem; /* Rounded corners */
-    font-size: 1rem; /* Font size for input */
-    background-color: #ffffff; /* White background for input */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
-  }
-  
-  /* Focus State */
-  .inputField:focus {
-    border-color: #6a11cb; /* Change border color on focus */
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5); /* Glow effect on focus */
-  }
-  
-  .createButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%; /* Full width */
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
-    color: white; /* White text color */
-    border: none; /* Remove default border */
-    border-radius: 0.5rem; /* Rounded corners */
-    padding: 0.75rem; /* Padding for the button */
-    font-size: 1.125rem; /* Font size for button */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin-top: 1rem; /* Space above the button */
-    transition: background 0.3s, transform 0.3s; /* Smooth transition */
-  }
-  
-  /* Hover Effect */
-  .createButton:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
-    transform: translateY(-2px); /* Slight lift effect on hover */
-  }
-  
-  /* Active State */
-  .createButton:active {
-    transform: translateY(0); /* Reset lift effect */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow on click */
-  }
-  
-  .buttonIcon {
-    margin-right: 0.5rem; /* Space between icon and text in button */
-    font-size: 1.5rem; /* Icon size in button */
-  }
-  .successMessage {
-    color: green;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 1.2em;
-  }/* Add this to EditDocter.module.css */
+.doctorContainer {
+  width: 100%;
+  max-width: 100%; /* Limit the width of the form */
+  padding: 2rem;
+  background-color: #f9f9f9; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h1 {
+  text-align: center; /* Center the title */
+  margin-bottom: 1.5rem; /* Space below the title */
+  color: #333; /* Darker text color */
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* Space between input fields */
+}
+
+.icon {
+  margin-right: 0.5rem; /* Space between icon and input */
+  color: #6a11cb; /* Icon color */
+  font-size: 1.5rem; /* Icon size */
+}
+
+.inputField {
+  flex: 1; /* Allow input to take available space */
+  padding: 0.75rem; /* Padding inside the input */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 0.5rem; /* Rounded corners */
+  font-size: 1rem; /* Font size for input */
+  background-color: #ffffff; /* White background for input */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+/* Focus State */
+.inputField:focus {
+  border-color: #6a11cb; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(106, 17, 203, 0.5); /* Glow effect on focus */
+}
+
+.createButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Full width */
+  background: linear-gradient(
+    135deg,
+    #6a11cb,
+    #2575fc
+  ); /* Gradient background */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 0.75rem; /* Padding for the button */
+  font-size: 1.125rem; /* Font size for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-top: 1rem; /* Space above the button */
+  transition: background 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Hover Effect */
+.createButton:hover {
+  background: linear-gradient(
+    135deg,
+    #2575fc,
+    #6a11cb
+  ); /* Reverse gradient on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Active State */
+.createButton:active {
+  transform: translateY(0); /* Reset lift effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow on click */
+}
+
+.buttonIcon {
+  margin-right: 0.5rem; /* Space between icon and text in button */
+  font-size: 1.5rem; /* Icon size in button */
+}
+.educationRow {
+  display: flex;
+  justify-content: space-between; /* Distributes space evenly between items */
+  margin-bottom: 1rem; /* Space below each row */
+}
+
+.educationRow .inputWrapper {
+  flex: 1; /* Allow inputs to take equal space */
+  margin-right: 1rem; /* Space between input fields */
+}
+
+.educationRow .inputWrapper:last-child {
+  margin-right: 0; /* Remove margin from the last input */
+}
+
+.addEducationButton {
+  background-color: #6a11cb; /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 0.5rem 1rem; /* Padding for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-bottom: 1rem; /* Space below the button */
+  transition: background 0.3s; /* Smooth transition */
+}
+
+.addEducationButton:hover {
+  background-color: #2575fc; /* Change color on hover */
+}
+/* Add this to CreatPharmacy.module.css */
 .modalOverlay {
   position: fixed;
   top: 0;

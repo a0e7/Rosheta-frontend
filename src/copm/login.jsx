@@ -27,11 +27,17 @@ const Login = () => {
 
       // Navigate based on the user role
       if (decodedToken.role === "admin") {
-        navigate("/admin");
+        navigate("/admin", {
+          state: { adminName: phoneNumber, email: "ahmed@gnmail.com" },
+        });
       } else if (decodedToken.role === "doctor") {
-        navigate("/homed");
+        navigate("/homed", {
+          state: { doctorName: phoneNumber, email: "ameer@gmail.com" },
+        });
       } else if (decodedToken.role === "pharmacy") {
-        navigate("/pharmacisthome");
+        navigate("/pharmacisthome", {
+          state: { pharmacistName: phoneNumber, email: "zied@gmail.com" },
+        });
       } else {
         setErrorMessage("Invalid role");
       }

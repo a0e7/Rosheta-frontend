@@ -60,8 +60,8 @@ const DocterAD = () => {
     if (confirm) {
       try {
         const endpoint = isActive
-          ? `https://api.rosheta.info/deactivate-Doctor/${id}`
-          : `https://api.rosheta.info/activate-Doctor/${id}`;
+          ? `https://api.rosheta.info/admin/deactivate-Doctor/${id}`
+          : `https://api.rosheta.info/  admin/activate-Doctor/${id}`;
 
         // Send request to the appropriate endpoint
         await axios.patch(endpoint, {
@@ -165,33 +165,23 @@ const DocterAD = () => {
                         onClick={() =>
                           handleDeactivate(doctor._id, doctor.isActive)
                         }
-                        className={
-                          doctor.isActive
-                            ? styles.deactivateButton
-                            : styles.activateButton
-                        }
+                        className={styles.deactivateButton}
+                        title={doctor.isActive ? "Deactivate" : "Activate"}
                       >
                         {doctor.isActive ? (
-                          <FaTimesCircle style={{ color: "red" }} /> // Deactivation icon
+                          <FaCheckCircle className={styles.activeIcon} />
                         ) : (
-                          <FaCheckCircle style={{ color: "green" }} /> // Activation icon
+                          <FaTimesCircle className={styles.inactiveIcon} />
                         )}
-                        {doctor.isActive ? "Deactivate" : "Activate"}
                       </button>
-                      {confirmDeactivateId === doctor._id && (
+                      {confirmDeactivateId === doctor.id && (
                         <div className={styles.confirmationPopup}>
                           <p>
-                            Are you sure you want to{" "}
-                            {doctor.isActive ? "deactivate" : "activate"} this
-                            doctor?
+                            Are you sure you want to {actionType} this doctor?
                           </p>
                           <button
                             onClick={() =>
-                              handleDeactivate(
-                                doctor._id,
-                                doctor.isActive,
-                                true
-                              )
+                              handleDeactivate(doctor._id, doctor.isActive)
                             }
                           >
                             Yes
