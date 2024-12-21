@@ -56,7 +56,7 @@ const ForgetPassword = () => {
           "https://api.rosheta.info/auth/forgetPassword",
           {
             phoneNumber: phone,
-            newPassword,
+            password: newPassword,
           }
         );
         setMessage(response.data.message);
